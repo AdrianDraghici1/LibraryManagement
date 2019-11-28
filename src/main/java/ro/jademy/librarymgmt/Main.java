@@ -1,6 +1,7 @@
 package ro.jademy.librarymgmt;
 
 import java.util.ArrayList;
+import java.util.List;
 
 
 public class Main {
@@ -109,12 +110,21 @@ public class Main {
         //library.printLibraryBooks();
         //library.printShelves();
 
-        library.borrowBook("Riding the Waves: My Story");
+
+        List<String> genereList1 = new ArrayList<>();
+        genereList1.add("Novelty");
+        genereList1.add("Romance");
+        List<String> genreList2 = new ArrayList<>();
+        genereList1.add("SF");
+        genreList2.add("History");
+        User bob = new User("Bob", 20, 1, 23123, genereList1);
+        User ana = new User("Ana", 16, 2, 38198, genreList2);
+
+        library.borrowBook("Riding the Waves: My Story", bob);
 //        library.printLibraryBooks();
         System.out.println("===================");
         library.printBorrowedBooks();
-
-
+        System.out.println(bob.getBorrowedBookList());
 
     }
 }
